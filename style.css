@@ -60,6 +60,7 @@ nav ul li {
 .content {
     display: flex; /* Yan yana hizalamak için flex kullan */
     justify-content: space-between; /* Araya boşluk bırak */
+    flex-wrap: wrap; /* Ekleme: Esnek sarmalama */
 }
 
 .left-column, .right-column {
@@ -160,7 +161,6 @@ footer {
 
 .btn.dark-mode:hover a {
     color: #ffcc00; /* Karanlık modda hover durumunda metin rengini koyulaştırın */
-    font-weight: bold; /* Üzerine gelindiğinde metni kalın tut */
 }
 
 /* Dark Mode */
@@ -226,6 +226,22 @@ iframe {
     border-radius: 8px; /* Kenar yumuşatma */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
     width: 100%; /* Genişliği kapsayıcı divin tamamına yayar */
-    height: 300; /* Yüksekliği otomatik ayarlar */
+    height: 300px; /* Yüksekliği otomatik ayarlar */
     margin: 10px 0; /* Üst ve alt boşluk */
+}
+
+/* Mobil Uyumluluk için Media Queries */
+@media (max-width: 768px) {
+    .left-column, .right-column {
+        flex: 100%; /* Kolonları alt alta yerleştir */
+        margin: 10px 0; /* Margo azalt */
+    }
+
+    h1 {
+        font-size: 2rem; /* Başlık boyutunu küçült */
+    }
+
+    h2 {
+        font-size: 1.5rem; /* Başlık boyutunu küçült */
+    }
 }
